@@ -9,9 +9,9 @@ public class StartTest {
     }
 
     public static void start(Class<?> testClassName) {
-   /*     final int minPriority = 1;
+        final int minPriority = 1;
         final int maxPriority = 10;
-        System.out.println("Начинается тестирование классов с аннотацией @Test в классе " + testClassName);
+        System.out.println("Начинается тестирование классов с аннотацией @Test в классе " + testClassName.getSimpleName());
         TreeMap<Integer, Method> methodsMap = new TreeMap<>();
         int iterator = 1;
         for (Method method : testClassName.getDeclaredMethods()
@@ -45,12 +45,11 @@ public class StartTest {
             }
         }
 //это было для теста выстроения, можно закомментить
-      *//*  System.out.println("Порядок выполнения методов теста " + testClassName.getSimpleName() + ":");
+    /*  System.out.println("Порядок выполнения методов теста " + testClassName.getSimpleName() + ":");
         for (Integer key : methodsMap.keySet()
         ) {
             System.out.println("    Приоритет метода: " + key + "; Исполняемый метод класса: " + methodsMap.get(key).getName());
-        }
-*//*
+        }*/
         try {
             Object test = testClassName.newInstance();
             System.out.println("Начало выполнения методов теста " + testClassName.getSimpleName() + ":");
@@ -63,6 +62,6 @@ public class StartTest {
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             e.printStackTrace();
         }
-*/
+
     }
 }
